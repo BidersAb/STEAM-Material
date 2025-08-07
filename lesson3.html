@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 3: Introduction to Python</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Lesson 3: Introduction to Python</h1>
+    <p>Welcome to Python, one of the most popular and versatile programming languages on the planet! Python is famous for its simple, readable syntax, which makes it an excellent choice for beginners. But don't let its simplicity fool you; it's also incredibly powerful and is used by major companies like Instagram, Netflix, and Spotify for everything from building websites to powering complex data analysis and artificial intelligence.</p>
+  </header>
+
+  <main>
+
+    <section id="python-overview">
+      <h2>What Can You Do with Python?</h2>
+      <p>Python is a general-purpose language, meaning it isn't specialized for just one task. You can use it for:</p>
+      <ul>
+        <li>Data analysis and machine learning</li>
+        <li>Web development (the "back-end" logic of websites)</li>
+        <li>Automation or scripting to automate repetitive tasks</li>
+        <li>Software testing and prototyping</li>
+        <li>Solving everyday tasks and problems</li>
+      </ul>
+    </section>
+
+    <section id="python-setup">
+      <h2>Getting Started: Your Programming Environment</h2>
+      <p>To start coding in Python, you need two things:</p>
+      <ol>
+        <li>
+          <strong>An Interpreter:</strong> This is the core program that understands your Python code. It reads your <code>.py</code> files line by line and translates them into instructions the computer can execute. Download and install the official Python interpreter from <a href="https://www.python.org/downloads" target="_blank" rel="noopener noreferrer">www.python.org/downloads</a>.
+        </li>
+        <li>
+          <strong>An IDE (Integrated Development Environment):</strong> This is the software where you will write your code. It is like a specialized text editor with helpful features such as a debugger and build automation tools. Popular choices include:
+          <ul>
+            <li>PyCharm (Community Edition is free)</li>
+            <li>Visual Studio Code (VS Code) (A very popular, free option)</li>
+            <li>IDLE (Comes bundled with the standard Python installation)</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section id="python-fundamentals">
+      <h2>Python Fundamentals: The Building Blocks</h2>
+
+      <h3>1. Comments</h3>
+      <p>Comments are notes in your code that are ignored by the Python interpreter. They are used to explain your code and make it more readable for yourself and others. In Python, any text following a hash symbol (<code>#</code>) is a comment.</p>
+      <pre><code># This is a comment. It won't be executed.
+print("Hello, World!")  # This part of the line is also a comment.
+      </code></pre>
+
+      <h3>2. Variables and Data Types</h3>
+      <p>Variables are containers for storing data values. You create one simply by assigning a value to a name.</p>
+      <pre><code>name = "Abebe"  # A variable 'name' of type string
+age = 16         # A variable 'age' of type integer
+      </code></pre>
+
+      <p>Python has several built-in data types:</p>
+      <ul>
+        <li><strong>Text Type (str):</strong> A string of text, enclosed in single or double quotes. <code>y = "John"</code> or <code>z = 'Python'</code></li>
+        <li><strong>Numeric Types:</strong>
+          <ul>
+            <li><code>int</code>: An integer (a whole number). <code>x = 5</code></li>
+            <li><code>float</code>: A floating-point number (a number with a decimal). <code>price = 99.5</code></li>
+          </ul>
+        </li>
+        <li><strong>Boolean Type (bool):</strong> Represents one of two values: <code>True</code> or <code>False</code>. Used for conditional logic. <code>is_active = True</code></li>
+        <li><strong>Sequence Types:</strong> <code>list</code> for ordered collections, <code>tuple</code>, <code>range</code></li>
+        <li><strong>Mapping Type:</strong> <code>dict</code> (dictionary) for key-value pairs</li>
+      </ul>
+      <p>You can check the data type of any variable using the <code>type()</code> function:</p>
+      <pre><code>x = 5
+print(type(x))  # This will display &lt;class 'int'&gt;
+      </code></pre>
+
+      <h3>3. User Input</h3>
+      <p>Python allows you to get input from the user during program execution using the <code>input()</code> function.</p>
+      <pre><code>username = input("Enter your username: ")
+print("Hello, " + username)
+      </code></pre>
+    </section>
+
+    <section id="control-flow">
+      <h2>Control Flow: Making Decisions and Repeating Actions</h2>
+
+      <h3>1. Conditional Statements (if, elif, else)</h3>
+      <p>These statements allow your program to execute different blocks of code based on whether a condition is true or false.</p>
+      <pre><code>a = 33
+b = 200
+if b > a:
+    print("b is greater than a")
+elif a == b:
+    print("a and b are equal")
+else:
+    print("a is greater than b")
+      </code></pre>
+
+      <h3>2. Loops (while and for)</h3>
+      <p>Loops are used to repeat a block of code.</p>
+      <ul>
+        <li><strong>while loop:</strong> Repeats as long as a condition is true.
+          <pre><code>i = 1
+while i &lt; 6:
+    print(i)
+    i += 1
+          </code></pre>
+        </li>
+        <li><strong>for loop:</strong> Iterates over a sequence (like a list or a range of numbers).
+          <pre><code>fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+          </code></pre>
+        </li>
+      </ul>
+    </section>
+
+    <section id="functions">
+      <h2>Functions: Organizing Your Code</h2>
+      <p>Functions are named, reusable blocks of code designed to perform a single, specific task. They make your code more organized, readable, and efficient. A function is defined with the <code>def</code> keyword.</p>
+
+      <h3>Parameters and Arguments</h3>
+      <pre><code>def my_function(fname, age):  # fname and age are parameters
+    print(fname + " is " + age + " years old.")
+
+my_function("Teshome", "36")  # "Teshome" and "36" are arguments
+      </code></pre>
+
+      <h3>Default Parameter Values</h3>
+      <pre><code>def my_function(country = "Ethiopia"):
+    print("I am from " + country)
+
+my_function("Sweden")  # Prints "I am from Sweden"
+my_function()         # Prints "I am from Ethiopia"
+      </code></pre>
+
+      <h3>Return Values</h3>
+      <pre><code>def calculate_square(x):
+    return x * x
+
+squared_number = calculate_square(5)
+print(squared_number)  # Output: 25
+      </code></pre>
+    </section>
+
+    <section id="python-exercises">
+      <h2>Python Exercises</h2>
+
+      <h3>Beginner Exercise: Personalized Story Generator</h3>
+      <ol>
+        <li>Ask the user for several pieces of information: their name, their city, the name of a friend, and an activity they enjoy (e.g., "playing football").</li>
+        <li>Store each piece of information in a separate variable.</li>
+        <li>Craft a short, one-paragraph story using the user's input.</li>
+        <li>Use an f-string (formatted string) to easily embed the variables into your story.</li>
+        <li>Example:
+          <pre><code>story = f"Once upon a time, {name} from {city} decided to go {activity} with their friend, {friend_name}."
+print(story)
+          </code></pre>
+        </li>
+        <li>Print the final, personalized story to the console.</li>
+      </ol>
+
+      <h3>Challenge Exercise: Student Gradebook</h3>
+      <ol>
+        <li>Create an empty dictionary called <code>gradebook</code>. The keys of this dictionary will be student names (strings), and the values will be a list of their grades (integers).
+          <pre><code>gradebook = {"Abel": [88, 92], "Beti": [95]}</code></pre>
+        </li>
+        <li>Create three functions:
+          <ul>
+            <li><code>add_student(student_name):</code> Checks if the student is already in the gradebook. If not, adds them with an empty list of grades.</li>
+            <li><code>add_grade(student_name, grade):</code> Adds a new grade to the list of grades for a specific student. If the student doesn't exist, print an error message.</li>
+            <li><code>calculate_average(student_name):</code> Finds the student, calculates the average of their grades, and prints it in a user-friendly format (e.g., "Abel's average grade is: 90.0"). Handle the case where a student has no grades yet.</li>
+          </ul>
+        </li>
+        <li>Write the main part of your program to test your functions:
+          <ul>
+            <li>Add 2-3 students to the gradebook.</li>
+            <li>Add several grades for each student.</li>
+            <li>Calculate and print the average for each student.</li>
+            <li>Try to add a grade for a student who doesn't exist to see your error message work.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Programming Lessons by YourName</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 2: Introduction to Web Development</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Lesson 2: Introduction to Web Development</h1>
+    <p>Welcome to the world of web development! This lesson will guide you through the three core technologies that power every single website you visit. We'll explore each one in detail and give you exercises to build your skills at every step.</p>
+  </header>
+
+  <main>
+    <section id="html-intro">
+      <h2>HTML - The Architect of the Web</h2>
+      <p>Think of HTML (HyperText Markup Language) as the architect's blueprint for a house. It defines the fundamental structure: where the rooms are, the doors, the windows, and the floors. In the same way, HTML lays out the structure of a webpage, telling the browser what is a heading, what is a paragraph, where an image should go, and what text should be a link.</p>
+
+      <h3>The Anatomy of a Perfect HTML Document</h3>
+      <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Awesome Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+
+      <h3>HTML Tags</h3>
+
+      <h4>1. Text and Content Tags</h4>
+      <ul>
+        <li>&lt;h1&gt; to &lt;h6&gt;: Headings</li>
+        <li>&lt;p&gt;: Paragraph</li>
+        <li>&lt;strong&gt;: Bold/strong text</li>
+        <li>&lt;em&gt; or &lt;i&gt;: Italic/emphasized text</li>
+        <li>
+          &lt;a&gt;: Anchor (hyperlink)<br />
+          Example: <code>&lt;a href="https://www.boeing.com" target="_blank"&gt;Visit Boeing&lt;/a&gt;</code>
+        </li>
+      </ul>
+
+      <h4>2. Structural and Semantic Tags</h4>
+      <ul>
+        <li>&lt;div&gt;: Division container</li>
+        <li>&lt;header&gt;, &lt;footer&gt;, &lt;main&gt;, &lt;nav&gt;: Semantic containers</li>
+      </ul>
+
+      <h4>3. Image and List Tags</h4>
+      <ul>
+        <li>
+          &lt;img&gt;: Image<br />
+          Example: <code>&lt;img src="ethiopian_logo.png" alt="Ethiopian Airlines Logo"&gt;</code>
+        </li>
+        <li>&lt;ul&gt; and &lt;ol&gt;: Unordered and Ordered lists with &lt;li&gt; items</li>
+      </ul>
+
+      <h3>HTML Exercise: My First Biography Page</h3>
+      <ul>
+        <li>Create <code>biography.html</code></li>
+        <li>Include &lt;title&gt;, &lt;header&gt;, &lt;main&gt;, and &lt;footer&gt;</li>
+        <li>&lt;header&gt;: Use &lt;h1&gt; for name</li>
+        <li>&lt;main&gt;:
+          <ul>
+            <li>&lt;h2&gt;Early Life&lt;/h2&gt; with &lt;p&gt;</li>
+            <li>&lt;h2&gt;Major Achievements&lt;/h2&gt; with an &lt;ol&gt; of at least three items</li>
+            <li>&lt;img&gt; of the person</li>
+          </ul>
+        </li>
+        <li>&lt;footer&gt;: Your name</li>
+      </ul>
+    </section>
+
+    <section id="css-intro">
+      <h2>CSS - The Interior Designer of the Web</h2>
+      <p>CSS (Cascading Style Sheets) controls everything visual: colors, fonts, spacing, positioning, and animations.</p>
+
+      <h3>How to Add CSS</h3>
+      <ol>
+        <li><strong>Internal CSS</strong>: Inside &lt;style&gt; tags in the &lt;head&gt;</li>
+        <li><strong>External CSS</strong>: Link to a <code>.css</code> file with &lt;link&gt;</li>
+      </ol>
+
+      <h3>CSS Selectors</h3>
+      <ul>
+        <li><strong>Element selector:</strong> <code>p { }</code></li>
+        <li><strong>Class selector:</strong> <code>.highlight { }</code></li>
+        <li><strong>ID selector:</strong> <code>#main-header { }</code></li>
+      </ul>
+
+      <h3>CSS Box Model</h3>
+      <ul>
+        <li><strong>Content:</strong> Text or image</li>
+        <li><strong>Padding:</strong> Space inside the element</li>
+        <li><strong>Border:</strong> Line around the padding</li>
+        <li><strong>Margin:</strong> Space outside the border</li>
+      </ul>
+
+      <h3>CSS Exercise: Style Your Biography Page</h3>
+      <ul>
+        <li>Use internal CSS (&lt;style&gt; in &lt;head&gt;)</li>
+        <li>Style the body background</li>
+        <li>Center &lt;h1&gt; and change its font</li>
+        <li>Style &lt;footer&gt; background</li>
+        <li>Give &lt;img&gt; a border</li>
+        <li>Set line-height for &lt;p&gt; tags to 1.5</li>
+      </ul>
+    </section>
+
+    <section id="js-intro">
+      <h2>JavaScript - The Magician of the Web</h2>
+      <p>JavaScript is the programming language that brings interactivity to the web. It runs in the browser and responds to user actions.</p>
+
+      <h3>How to Add JavaScript</h3>
+      <p>Use &lt;script&gt; tags, usually placed before &lt;/body&gt;.</p>
+      <pre>
+&lt;script&gt;
+  console.log("The page has loaded and the script is running!");
+&lt;/script&gt;
+      </pre>
+
+      <h3>JavaScript Core Concepts</h3>
+
+      <h4>1. Variables</h4>
+      <ul>
+        <li><code>let</code>: Reassignable variable</li>
+        <li><code>const</code>: Constant (unchangeable)</li>
+        <li><code>var</code>: Old version, use less</li>
+      </ul>
+
+      <h4>2. Data Types</h4>
+      <ul>
+        <li>String: <code>"Hello"</code></li>
+        <li>Number: <code>42</code></li>
+        <li>Boolean: <code>true</code> or <code>false</code></li>
+        <li>Array: <code>["a", "b", "c"]</code></li>
+        <li>Object: <code>{ name: "Alice", age: 25 }</code></li>
+      </ul>
+
+      <h4>3. Functions</h4>
+      <pre>
+&lt;script&gt;
+  function calculateArea(width, height) {
+    let area = width * height;
+    return area;
+  }
+
+  let area = calculateArea(5, 10);
+  console.log("The area is: " + area);
+&lt;/script&gt;
+      </pre>
+
+      <h4>4. Conditional Logic</h4>
+      <pre>
+&lt;script&gt;
+  let hour = 14;
+  if (hour &lt; 12) {
+    console.log("Good morning!");
+  } else if (hour &lt; 18) {
+    console.log("Good afternoon!");
+  } else {
+    console.log("Good evening!");
+  }
+&lt;/script&gt;
+      </pre>
+
+      <h3>DOM Manipulation</h3>
+      <ul>
+        <li><code>document.getElementById('id')</code></li>
+        <li><code>document.querySelector('.class')</code></li>
+        <li><code>.innerHTML</code>, <code>.textContent</code>, <code>.value</code></li>
+        <li><code>.style.property</code> (e.g., <code>backgroundColor</code>)</li>
+      </ul>
+
+      <h3>JavaScript Exercise: Tip Calculator</h3>
+      <ul>
+        <li>HTML:
+          <ul>
+            <li>&lt;h1&gt;Tip Calculator&lt;/h1&gt;</li>
+            <li>&lt;input type="number" id="billAmount"&gt;</li>
+            <li>&lt;button onclick="calculateTip()"&gt;Calculate 15% Tip&lt;/button&gt;</li>
+            <li>&lt;h2 id="tipResult"&gt;&lt;/h2&gt;</li>
+          </ul>
+        </li>
+        <li>JavaScript:
+          <pre>
+&lt;script&gt;
+  function calculateTip() {
+    let bill = parseFloat(document.getElementById('billAmount').value);
+    let tip = bill * 0.15;
+    let resultElement = document.getElementById('tipResult');
+    resultElement.textContent = "Tip to leave: $" + tip.toFixed(2);
+  }
+&lt;/script&gt;
+          </pre>
+        </li>
+      </ul>
+
+      <h3>Challenge: Mini To-Do List App</h3>
+      <ul>
+        <li>HTML:
+          <ul>
+            <li>&lt;h1&gt;My To-Do List&lt;/h1&gt;</li>
+            <li>&lt;input id="newItemInput"&gt;</li>
+            <li>&lt;button onclick="addTask()"&gt;Add Task&lt;/button&gt;</li>
+            <li>&lt;ul id="taskList"&gt;&lt;/ul&gt;</li>
+          </ul>
+        </li>
+        <li>JavaScript:
+          <pre>
+&lt;script&gt;
+  function addTask() {
+    let taskText = document.getElementById('newItemInput').value;
+    if (taskText === "") return;
+
+    let li = document.createElement('li');
+    li.textContent = taskText;
+
+    li.onclick = function() {
+      this.classList.toggle('completed');
+    };
+
+    document.getElementById('taskList').appendChild(li);
+    document.getElementById('newItemInput').value = "";
+  }
+&lt;/script&gt;
+          </pre>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name Here</p>
+  </footer>
+
+</body>
+</html>
