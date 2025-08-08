@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Student Pack 2025 — Lesson 8: Introduction to Artificial Intelligence (AI)</title>
+<link rel="stylesheet" href="assets/style.css" />
+<script defer src="assets/script.js"></script>
+</head>
+<body class="lesson lesson-8">
+  <div class="container cards">
+    <header class="book-header">
+      <div class="book-title"><a href="index.html">Student Pack 2025</a></div>
+      <div class="lesson-title">Lesson 8 — Introduction to Artificial Intelligence (AI)</div>
+      <nav class="chapter-nav">
+        <a href="index.html">Contents</a> | 
+        <a href="lesson7.html">Prev</a> | 
+        <a href="lesson9.html">Next</a>
+      </nav>
+      <div class="reader-tools">
+        <div class="font-controls">
+          <button class="btn" data-font="-">A-</button>
+          <button class="btn" data-font="+">A+</button>
+        </div>
+        <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle theme">Toggle Theme</button>
+      </div>
+    </header>
+
+    <main class="book-content">
+      <section class="callout info">
+        <h4>Learning objectives</h4>
+        <ul>
+          <li>Differentiate ANI, AGI, and ASI; and AI functionality types.</li>
+          <li>Explain ML vs. DL, and what makes LLMs/generative AI possible.</li>
+          <li>Outline a minimal Python environment for ML experiments.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Introduction to Artificial Intelligence (AI)</h2>
+        <p>Welcome to one of the most transformative fields in all of technology: Artificial Intelligence. AI is no longer a concept from science fiction; it is a powerful force actively shaping our world. This lesson will guide you through the fundamental types of AI, the technologies that power it, and cutting-edge models like ChatGPT that you can interact with today.</p>
+
+        <h3>The Evolution of AI</h3>
+        <p>The history of Artificial Intelligence began with a wave of excitement in the 1950s. The field's development can be traced through several key milestones, including powerful subsets like Machine Learning and Deep Learning that have created significant disruptions over time:</p>
+        <ul>
+          <li><strong>1950s:</strong> AI pioneer Arthur Samuel developed one of the first self-learning systems—a program that played checkers and improved its performance by learning from past games. In 1959, Samuel coined the term "Machine Learning."</li>
+          <li><strong>1960s:</strong> Development of early neural networks and the perceptron model.</li>
+          <li><strong>1980s:</strong> Machine learning flourished with advanced neural networks and the backpropagation algorithm.</li>
+          <li><strong>2000s:</strong> The rise of big data and increased computational power fueled further progress.</li>
+          <li><strong>2010s:</strong> The "deep learning revolution" led to breakthroughs in image and speech recognition.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>What is Artificial Intelligence?</h3>
+        <p>At its core, Artificial Intelligence (AI) is a broad field of computer science dedicated to creating machines or systems that perform tasks normally requiring human intelligence. These include learning from experience, solving complex problems, understanding human language, recognizing images, and making decisions.</p>
+        <p>AI can be categorized by:</p>
+        <ul>
+          <li><strong>Capability:</strong> What AI can do.</li>
+          <li><strong>Functionality:</strong> How AI "thinks."</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>The Significance of AI in Modern Technology</h3>
+        <p>AI is revolutionizing various industries and aspects of daily life:</p>
+        <ul>
+          <li><strong>Automation and Efficiency:</strong> Automates repetitive tasks, improving efficiency and reducing human error, especially in manufacturing.</li>
+          <li><strong>Healthcare Advancements:</strong> Assists in diagnosing diseases, predicting outcomes, and personalizing treatments by analyzing medical images and data.</li>
+          <li><strong>Enhanced User Experiences:</strong> Provides personalized recommendations on platforms like Netflix and Amazon.</li>
+          <li><strong>Smart Assistants:</strong> Virtual assistants such as Siri, Alexa, and Google Assistant understand voice commands to simplify daily life.</li>
+          <li><strong>Transportation and Safety:</strong> AI powers self-driving cars that analyze traffic and make real-time driving decisions to reduce accidents.</li>
+          <li><strong>Data Analysis and Decision Making:</strong> Businesses leverage AI to analyze vast data sets, uncover trends, and optimize operations.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>The Types of AI by Capability (The Three Stages)</h3>
+        <p>This common classification is based on AI’s intelligence level relative to humans:</p>
+        <ul>
+          <li><strong>Artificial Narrow Intelligence (ANI) or "Weak AI":</strong> The only type currently existing. Designed to perform one specific task. Examples include Siri, Alexa, self-driving cars, and spam filters.</li>
+          <li><strong>Artificial General Intelligence (AGI) or "Strong AI":</strong> A future AI that can understand, learn, and apply knowledge indistinguishably from humans. It does not yet exist.</li>
+          <li><strong>Artificial Superintelligence (ASI):</strong> A theoretical stage where AI surpasses human intelligence in all fields.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>The Types of AI by Functionality (The Four Kinds)</h3>
+        <p>This focuses on how AI processes information and its level of "consciousness":</p>
+        <ol>
+          <li><strong>Reactive Machines:</strong> Basic AI that reacts only to current situations without memory. Example: IBM’s Deep Blue chess program.</li>
+          <li><strong>Limited Memory:</strong> AI that uses past data to inform current decisions. Most Narrow AI today, such as self-driving cars and Netflix’s recommendation engine.</li>
+          <li><strong>Theory of Mind:</strong> Future AI that can understand emotions, beliefs, and thoughts. Does not yet exist.</li>
+          <li><strong>Self-Awareness:</strong> Ultimate theoretical AI stage with consciousness and self-understanding.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Machine Learning &amp; Deep Learning</h3>
+        <p><strong>Machine Learning (ML):</strong> AI method where models learn from large data sets to recognize patterns and make predictions without explicit programming.</p>
+        <p><strong>Deep Learning (DL):</strong> Subfield of ML using deep neural networks with many layers, powering today’s advanced AI, including Generative AI.</p>
+      </section>
+
+      <section>
+        <h3>Generative AI, LLMs, and Chatbots</h3>
+        <p>The most recent breakthrough in AI is Generative AI, which can create new and original content.</p>
+        <ul>
+          <li><strong>Large Language Models (LLMs):</strong> Deep learning models trained on massive text corpora that predict language patterns to generate essays, translations, summaries, and code.</li>
+          <li><strong>Chatbots like ChatGPT:</strong> Interfaces powered by LLMs for conversational interaction. Examples include OpenAI’s GPT models, Google’s Gemini, and Anthropic’s Claude.</li>
+          <li><strong>Other Generative AI:</strong> Image generation models like Midjourney and DALL·E generate original art from text descriptions.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>How Machine Learning Works</h3>
+        <p>ML uses algorithms to detect patterns in data and make predictions. The process includes:</p>
+        <ol>
+          <li><strong>Data Collection:</strong> Gather high-quality, diverse datasets with input data and labels for training.</li>
+          <li><strong>Data Preprocessing:</strong> Clean and prepare data, including normalization and formatting for models.</li>
+          <li><strong>Building the Model:</strong> Choose and define an ML model, commonly a neural network.</li>
+          <li><strong>Training the Model:</strong> Feed data to the model to learn relationships via repeated epochs.</li>
+          <li><strong>Evaluating the Model:</strong> Test model performance on unseen data.</li>
+          <li><strong>Making Predictions:</strong> Use the trained model for real-world applications.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Setting Up Your Python Environment</h3>
+        <p>To avoid conflicts, create a virtual environment for your AI project:</p>
+        <ol>
+          <li>Install Python from <a href="https://python.org" target="_blank" rel="noopener noreferrer">python.org</a>.</li>
+          <li>Open your terminal/command prompt.</li>
+          <li>Create a virtual environment:<br><code>python -m venv ai-env</code></li>
+          <li>Activate the environment:<br>
+            <code>ai-env\Scripts\activate</code> (Windows)<br>
+            <code>source ai-env/bin/activate</code> (macOS/Linux)</li>
+          <li>Install essential libraries:<br><code>pip install numpy pandas matplotlib scikit-learn jupyter</code></li>
+        </ol>
+        <p>This minimal environment allows you to experiment with ML and DL notebooks easily.</p>
+      </section>
+
+      <section class="exercise">
+        <h3>Exercises</h3>
+        <ol>
+          <li>Define and explain the difference between ANI, AGI, and ASI.</li>
+          <li>Describe how machine learning differs from deep learning.</li>
+          <li>List three real-world applications of AI you encounter daily.</li>
+          <li>Set up a virtual Python environment following the instructions above.</li>
+          <li>Research and report on one famous AI model, such as GPT-4 or BERT.</li>
+        </ol>
+      </section>
+
+      <section class="exercise">
+        <h3>Project Challenge</h3>
+        <p>Choose a simple AI application, such as a chatbot or image classifier, and:</p>
+        <ul>
+          <li>Outline the project goals.</li>
+          <li>Identify the AI type and functionality category it belongs to.</li>
+          <li>List the steps you will take to build it, including data collection and model training.</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer class="book-footer">
+      <p>© 2025 Student Pack — All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

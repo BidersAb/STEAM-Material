@@ -1,244 +1,491 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lesson 2: Introduction to Web Development</title>
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Pack 2025 — Lesson 2: Introduction to Web Development</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/script.js"></script>
 </head>
-<body>
+<body class="lesson lesson-2">
+  <div class="container cards">
 
-  <header>
-    <h1>Lesson 2: Introduction to Web Development</h1>
-    <p>Welcome to the world of web development! This lesson will guide you through the three core technologies that power every single website you visit. We'll explore each one in detail and give you exercises to build your skills at every step.</p>
-  </header>
+    <!-- Header -->
+    <header class="book-header">
+      <div class="book-title"><a href="index.html">Student Pack 2025</a></div>
+      <div class="lesson-title">Lesson 2 — Introduction to Web Development</div>
+      <nav class="chapter-nav">
+        <a href="index.html">Contents</a> | <a href="lesson1.html">Prev</a> | <a href="lesson3.html">Next</a>
+      </nav>
+      <div class="reader-tools">
+        <div class="font-controls">
+          <button class="btn" data-font="-">A-</button>
+          <button class="btn" data-font="+">A+</button>
+        </div>
+        <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle theme">Toggle Theme</button>
+      </div>
+    </header>
 
-  <main>
-    <section id="html-intro">
-      <h2>HTML - The Architect of the Web</h2>
-      <p>Think of HTML (HyperText Markup Language) as the architect's blueprint for a house. It defines the fundamental structure: where the rooms are, the doors, the windows, and the floors. In the same way, HTML lays out the structure of a webpage, telling the browser what is a heading, what is a paragraph, where an image should go, and what text should be a link.</p>
+    <!-- Main Content -->
+    <main class="book-content">
 
-      <h3>The Anatomy of a Perfect HTML Document</h3>
-      <pre>
-&lt;!DOCTYPE html&gt;
+      <!-- Learning Objectives -->
+      <div class="callout tip">
+        <h4>In this lesson</h4>
+        <ul>
+          <li>Understand HTML structure and semantic elements</li>
+          <li>Apply CSS selectors and the box model</li>
+          <li>Add basic JavaScript for interactivity</li>
+        </ul>
+      </div>
+
+      <!-- Introduction -->
+      <section>
+        <h2>Introduction to Web Development</h2>
+        <p>Welcome to the world of web development! This lesson will guide you through the three core technologies that power every single website you visit. We'll explore each one in detail and give you exercises to build your skills at every step.</p>
+      </section>
+
+      <!-- HTML Section -->
+      <section>
+        <h2>HTML - The Architect of the Web</h2>
+        <p>Think of HTML (HyperText Markup Language) as the architect's blueprint for a house. It doesn't decide the color of the walls or the style of the furniture, but it defines the fundamental structure: where the rooms are, the doors, the windows, and the floors. In the same way, HTML lays out the structure of a webpage, telling the browser what is a heading, what is a paragraph, where an image should go, and what text should be a link.</p>
+
+        <h3>The Anatomy of a Perfect HTML Document</h3>
+        <p>Every HTML page has a foundational structure that you must include. It acts as a universal starting point.</p>
+
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;My Awesome Web Page&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Awesome Web Page&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
+    &lt;!-- Your content goes here --&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-      </pre>
+&lt;/html&gt;</code></pre>
 
-      <h3>HTML Tags</h3>
+        <h4>Key Elements Explained:</h4>
+        <ul>
+          <li><code>&lt;!DOCTYPE html&gt;</code>: The very first line. It tells the browser, "This document is an HTML5 page."</li>
+          <li><code>&lt;html&gt;</code>: The root element that wraps everything. All other elements are nested inside this one. The <code>lang="en"</code> attribute specifies the page's language is English.</li>
+          <li><code>&lt;head&gt;</code>: This section is the "brain" of the page. It holds important information about the page, but nothing you see here is displayed in the main browser window.</li>
+          <li><code>&lt;meta charset="UTF-8"&gt;</code>: Declares the character set, ensuring text and symbols display correctly.</li>
+          <li><code>&lt;meta name="viewport" ...&gt;</code>: A crucial line for mobile devices, ensuring the page scales correctly to the screen size.</li>
+          <li><code>&lt;title&gt;</code>: Sets the text that appears in the browser tab.</li>
+          <li><code>&lt;body&gt;</code>: This is where the magic happens! Any content you want to be visible on your webpage—text, images, videos, and links—must go inside the <code>&lt;body&gt;</code> tags.</li>
+        </ul>
+      </section>
 
-      <h4>1. Text and Content Tags</h4>
-      <ul>
-        <li>&lt;h1&gt; to &lt;h6&gt;: Headings</li>
-        <li>&lt;p&gt;: Paragraph</li>
-        <li>&lt;strong&gt;: Bold/strong text</li>
-        <li>&lt;em&gt; or &lt;i&gt;: Italic/emphasized text</li>
-        <li>
-          &lt;a&gt;: Anchor (hyperlink)<br />
-          Example: <code>&lt;a href="https://www.boeing.com" target="_blank"&gt;Visit Boeing&lt;/a&gt;</code>
-        </li>
-      </ul>
+      <!-- HTML Tags Section -->
+      <section>
+        <h3>HTML Tags</h3>
+        <p>Tags are the building blocks of HTML. Let's categorize them.</p>
 
-      <h4>2. Structural and Semantic Tags</h4>
-      <ul>
-        <li>&lt;div&gt;: Division container</li>
-        <li>&lt;header&gt;, &lt;footer&gt;, &lt;main&gt;, &lt;nav&gt;: Semantic containers</li>
-      </ul>
+        <h4>1. Text and Content Tags</h4>
+        <ul>
+          <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>: Headings, from most important (<code>&lt;h1&gt;</code>) to least important (<code>&lt;h6&gt;</code>). Use <code>&lt;h1&gt;</code> for the main page title and the others for subheadings.</li>
+          <li><code>&lt;p&gt;</code>: The paragraph tag, used for any block of text.</li>
+          <li><code>&lt;strong&gt;</code>: Used to give text strong importance. Browsers display this as bold.</li>
+          <li><code>&lt;em&gt;</code>: Used to give text emphasized stress. Browsers display this as italic.</li>
+          <li><code>&lt;a&gt;</code>: The anchor tag, used for creating hyperlinks. Its most important attribute is <code>href</code>, which specifies the destination URL.</li>
+        </ul>
 
-      <h4>3. Image and List Tags</h4>
-      <ul>
-        <li>
-          &lt;img&gt;: Image<br />
-          Example: <code>&lt;img src="ethiopian_logo.png" alt="Ethiopian Airlines Logo"&gt;</code>
-        </li>
-        <li>&lt;ul&gt; and &lt;ol&gt;: Unordered and Ordered lists with &lt;li&gt; items</li>
-      </ul>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-html">&lt;a href="https://www.boeing.com" target="_blank"&gt;Visit Boeing&lt;/a&gt;</code></pre>
+        <p>The <code>target="_blank"</code> attribute tells the browser to open the link in a new tab.</p>
 
-      <h3>HTML Exercise: My First Biography Page</h3>
-      <ul>
-        <li>Create <code>biography.html</code></li>
-        <li>Include &lt;title&gt;, &lt;header&gt;, &lt;main&gt;, and &lt;footer&gt;</li>
-        <li>&lt;header&gt;: Use &lt;h1&gt; for name</li>
-        <li>&lt;main&gt;:
-          <ul>
-            <li>&lt;h2&gt;Early Life&lt;/h2&gt; with &lt;p&gt;</li>
-            <li>&lt;h2&gt;Major Achievements&lt;/h2&gt; with an &lt;ol&gt; of at least three items</li>
-            <li>&lt;img&gt; of the person</li>
-          </ul>
-        </li>
-        <li>&lt;footer&gt;: Your name</li>
-      </ul>
-    </section>
+        <h4>2. Structural and Semantic Tags</h4>
+        <ul>
+          <li><code>&lt;div&gt;</code>: The "division" tag. This is a generic container used to group other elements together for styling or layout purposes.</li>
+          <li><code>&lt;header&gt;</code>: Represents the introductory content at the top of a page, often containing a logo, navigation, and the main heading.</li>
+          <li><code>&lt;footer&gt;</code>: Represents the footer at the bottom of a page, often containing copyright information, contact details, and links.</li>
+          <li><code>&lt;nav&gt;</code>: Used specifically to contain the main navigation links for a site.</li>
+          <li><code>&lt;main&gt;</code>: Wraps the main, unique content of the page.</li>
+        </ul>
 
-    <section id="css-intro">
-      <h2>CSS - The Interior Designer of the Web</h2>
-      <p>CSS (Cascading Style Sheets) controls everything visual: colors, fonts, spacing, positioning, and animations.</p>
+        <h4>3. Image and List Tags</h4>
+        <ul>
+          <li><code>&lt;img&gt;</code>: Embeds an image. It is a self-closing tag.
+            <ul>
+              <li><code>src</code>: The "source" attribute points to the image file's URL or path.</li>
+              <li><code>alt</code>: The "alternative text" attribute is crucial for accessibility. It describes the image for screen readers and displays if the image fails to load.</li>
+            </ul>
+          </li>
+          <li><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code>: Unordered (bulleted) and Ordered (numbered) lists. Each item within the list must be wrapped in an <code>&lt;li&gt;</code> (list item) tag.</li>
+        </ul>
 
-      <h3>How to Add CSS</h3>
-      <ol>
-        <li><strong>Internal CSS</strong>: Inside &lt;style&gt; tags in the &lt;head&gt;</li>
-        <li><strong>External CSS</strong>: Link to a <code>.css</code> file with &lt;link&gt;</li>
-      </ol>
+        <p><strong>Example:</strong></p>
+        <pre><code class="language-html">&lt;img src="ethiopian_logo.png" alt="Ethiopian Airlines Logo"&gt;</code></pre>
+      </section>
 
-      <h3>CSS Selectors</h3>
-      <ul>
-        <li><strong>Element selector:</strong> <code>p { }</code></li>
-        <li><strong>Class selector:</strong> <code>.highlight { }</code></li>
-        <li><strong>ID selector:</strong> <code>#main-header { }</code></li>
-      </ul>
+      <!-- HTML Exercise -->
+      <section>
+        <h3>HTML Exercise: My First Biography Page</h3>
+        <p>Create an HTML file named <code>biography.html</code>. Using the tags you've learned, structure a page about a famous person or a fictional character.</p>
 
-      <h3>CSS Box Model</h3>
-      <ul>
-        <li><strong>Content:</strong> Text or image</li>
-        <li><strong>Padding:</strong> Space inside the element</li>
-        <li><strong>Border:</strong> Line around the padding</li>
-        <li><strong>Margin:</strong> Space outside the border</li>
-      </ul>
+        <h4>Requirements:</h4>
+        <ul>
+          <li>It must have a <code>&lt;title&gt;</code>.</li>
+          <li>It must use <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> sections.</li>
+          <li>The <code>&lt;header&gt;</code> should contain an <code>&lt;h1&gt;</code> with the person's name.</li>
+          <li>The <code>&lt;main&gt;</code> section should have:
+            <ul>
+              <li>An <code>&lt;h2&gt;</code> for "Early Life" followed by a <code>&lt;p&gt;</code>.</li>
+              <li>An <code>&lt;h2&gt;</code> for "Major Achievements" followed by an ordered list (<code>&lt;ol&gt;</code>) of at least three achievements.</li>
+              <li>An <code>&lt;img&gt;</code> tag showing a picture of the person (you can find an image URL online). Don't forget the alt text!</li>
+            </ul>
+          </li>
+          <li>The <code>&lt;footer&gt;</code> should contain a <code>&lt;p&gt;</code> with your name as the "page creator."</li>
+        </ul>
+      </section>
 
-      <h3>CSS Exercise: Style Your Biography Page</h3>
-      <ul>
-        <li>Use internal CSS (&lt;style&gt; in &lt;head&gt;)</li>
-        <li>Style the body background</li>
-        <li>Center &lt;h1&gt; and change its font</li>
-        <li>Style &lt;footer&gt; background</li>
-        <li>Give &lt;img&gt; a border</li>
-        <li>Set line-height for &lt;p&gt; tags to 1.5</li>
-      </ul>
-    </section>
+      <!-- CSS Section -->
+      <section>
+        <h2>CSS - The Interior Designer of the Web</h2>
+        <p>If HTML is the structure, CSS (Cascading Style Sheets) is the style. CSS controls everything visual: colors, fonts, spacing, positioning, and animations. It turns a plain black-and-white document into a vibrant and engaging user experience.</p>
 
-    <section id="js-intro">
-      <h2>JavaScript - The Magician of the Web</h2>
-      <p>JavaScript is the programming language that brings interactivity to the web. It runs in the browser and responds to user actions.</p>
+        <h3>How to Add CSS to Your Page</h3>
+        <p>There are three ways to apply CSS, but we will focus on the most common one for beginners:</p>
 
-      <h3>How to Add JavaScript</h3>
-      <p>Use &lt;script&gt; tags, usually placed before &lt;/body&gt;.</p>
-      <pre>
-&lt;script&gt;
-  console.log("The page has loaded and the script is running!");
-&lt;/script&gt;
-      </pre>
+        <h4>1. Internal CSS</h4>
+        <p>You write your CSS rules inside a <code>&lt;style&gt;</code> tag, which is placed inside the <code>&lt;head&gt;</code> section of your HTML file. This is perfect for single-page projects.</p>
 
-      <h3>JavaScript Core Concepts</h3>
+        <pre><code class="language-html">&lt;head&gt;
+    &lt;style&gt;
+        body {
+            background-color: #f0f8ff; /* A light blue */
+        }
+        h1 {
+            color: #003366; /* A dark blue */
+            font-family: Arial, sans-serif;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
 
-      <h4>1. Variables</h4>
-      <ul>
-        <li><code>let</code>: Reassignable variable</li>
-        <li><code>const</code>: Constant (unchangeable)</li>
-        <li><code>var</code>: Old version, use less</li>
-      </ul>
+        <h4>2. External CSS</h4>
+        <p>For multi-page websites, it's best practice to put all your CSS in a separate file (e.g., <code>style.css</code>) and link to it from each HTML page using a <code>&lt;link&gt;</code> tag in the <code>&lt;head&gt;</code>.</p>
 
-      <h4>2. Data Types</h4>
-      <ul>
-        <li>String: <code>"Hello"</code></li>
-        <li>Number: <code>42</code></li>
-        <li>Boolean: <code>true</code> or <code>false</code></li>
-        <li>Array: <code>["a", "b", "c"]</code></li>
-        <li>Object: <code>{ name: "Alice", age: 25 }</code></li>
-      </ul>
+        <pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Sample Multi-Page Website&lt;/title&gt;
+    &lt;!-- Link to external CSS file --&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;</code></pre>
+      </section>
 
-      <h4>3. Functions</h4>
-      <pre>
-&lt;script&gt;
-  function calculateArea(width, height) {
+      <!-- CSS Selectors Section -->
+      <section>
+        <h3>Targeting Your Elements</h3>
+        <p>To style an element, you first need to select it.</p>
+
+        <h4>CSS Selectors</h4>
+        <ul>
+          <li><strong>Element Selector:</strong> Targets all elements of a certain type.
+            <pre><code class="language-css">p { color: grey; }</code></pre>
+          </li>
+          <li><strong>Class Selector:</strong> Targets all elements with a specific class attribute. This is the most flexible and widely used selector. You define it with a period (.).
+            <pre><code class="language-html">&lt;p class="highlight"&gt;This is important!&lt;/p&gt;</code></pre>
+            <pre><code class="language-css">.highlight { background-color: yellow; }</code></pre>
+          </li>
+          <li><strong>ID Selector:</strong> Targets a single, unique element with a specific id attribute. You define it with a hash (#). An id should only be used once per page.
+            <pre><code class="language-html">&lt;div id="main-header"&gt;Welcome&lt;/div&gt;</code></pre>
+            <pre><code class="language-css">#main-header { font-size: 32px; }</code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <!-- CSS Box Model Section -->
+      <section>
+        <h3>The CSS Box Model</h3>
+        <p>Every element on a page is a rectangular box. The CSS Box Model describes the makeup of this box:</p>
+
+        <ul>
+          <li><strong>Content:</strong> The actual text or image.</li>
+          <li><strong>Padding:</strong> The transparent space inside the box, between the content and the border.</li>
+          <li><strong>Border:</strong> The line that goes around the padding and content. You can set its width, style (solid, dotted), and color.</li>
+          <li><strong>Margin:</strong> The transparent space outside the box, pushing other elements away from it.</li>
+        </ul>
+
+        <pre><code class="language-css">.box {
+    width: 200px;           /* Content width */
+    height: 100px;          /* Content height */
+    background-color: #f0e68c; /* Content background */
+    padding: 20px;          /* Padding inside the box */
+    border: 5px solid #4682b4; /* Border width, style, and color */
+    margin: 30px;           /* Margin outside the box */
+    text-align: center;     /* Center the text */
+    font-family: Arial, sans-serif;
+}</code></pre>
+      </section>
+
+      <!-- CSS Exercise -->
+      <section>
+        <h3>CSS Exercise: Style Your Biography Page</h3>
+        <p>Take the <code>biography.html</code> file you created earlier and add an internal stylesheet using the <code>&lt;style&gt;</code> tag.</p>
+
+        <h4>Requirements:</h4>
+        <ul>
+          <li>Give the <code>&lt;body&gt;</code> a background color.</li>
+          <li>Center the <code>&lt;h1&gt;</code> text and change its font (<code>font-family</code>).</li>
+          <li>Give the <code>&lt;footer&gt;</code> a different background color from the body to make it stand out.</li>
+          <li>Style the <code>&lt;img&gt;</code> tag to have a border around it.</li>
+          <li>Give all of your <code>&lt;p&gt;</code> tags a line height of 1.5 to make them more readable (<code>line-height: 1.5;</code>).</li>
+        </ul>
+      </section>
+
+      <!-- JavaScript Section -->
+      <section>
+        <h2>JavaScript - The Magician of the Web</h2>
+        <p>Welcome to the most dynamic part of web development. If HTML is the skeleton and CSS is the skin, JavaScript is the nervous system and muscles. It's the "magic" that makes things happen on a webpage. When you click a button, see a photo gallery slide, fill out a form that gives you instant feedback, or play a game in your browser, you are experiencing the power of JavaScript.</p>
+
+        <p>It is a full programming language that runs directly in the browser and gives you the ability to manipulate the page's content and style in response to user actions.</p>
+
+        <h3>How to Add JavaScript to Your Page</h3>
+        <p>You can write JavaScript code directly inside <code>&lt;script&gt;</code> tags. It is best practice to place these tags just before the closing <code>&lt;/body&gt;</code> tag. This ensures that the HTML content has fully loaded and is ready to be manipulated before your script runs.</p>
+
+        <pre><code class="language-html">&lt;body&gt;
+    &lt;h1&gt;My Interactive Page&lt;/h1&gt;
+    &lt;p&gt;Some content here...&lt;/p&gt;
+
+    &lt;script&gt;
+        // Your JavaScript magic goes here!
+        console.log("The page has loaded and the script is running!");
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+      </section>
+
+      <!-- JavaScript Core Concepts -->
+      <section>
+        <h3>JavaScript Core Concepts</h3>
+
+        <h4>1. Variables: Storing Your Data</h4>
+        <p>Variables are named containers used to store data. In modern JavaScript, you have three ways to declare a variable, each with a specific purpose:</p>
+
+        <ul>
+          <li><code>let</code>: Use let for variables whose values may change over time. This is the most common choice for variables that need to be reassigned.</li>
+          <li><code>const</code>: Use const (constant) for variables whose values will not change after they are first assigned. This helps prevent accidental changes in your code.</li>
+          <li><code>var</code>: This is the old way of declaring variables. You will see it in older tutorials, but it has some quirky behavior. It's recommended to use let and const instead.</li>
+        </ul>
+
+        <h4>2. Data Types: The Different Kinds of Information</h4>
+        <p>JavaScript can handle various types of data:</p>
+
+        <ul>
+          <li><strong>String:</strong> A sequence of text, enclosed in single or double quotes.
+            <pre><code class="language-javascript">let greeting = "Hello, world!";</code></pre>
+          </li>
+          <li><strong>Number:</strong> Any numerical value, including integers and decimals.
+            <pre><code class="language-javascript">let userAge = 16;
+let price = 99.95;</code></pre>
+          </li>
+          <li><strong>Boolean:</strong> A simple true or false value, often used for conditional checks.
+            <pre><code class="language-javascript">let isLoggedIn = true;</code></pre>
+          </li>
+          <li><strong>Array:</strong> An ordered list of values, enclosed in square brackets []. You can store any data type in an array.
+            <pre><code class="language-javascript">const colors = ["red", "green", "blue"];
+const scores = [98, 87, 100, 75];</code></pre>
+          </li>
+          <li><strong>Object:</strong> A collection of related data stored as key-value pairs, enclosed in curly braces {}. This is perfect for representing a single entity, like a user.</li>
+        </ul>
+
+        <h4>3. Functions: Reusable Code Blocks</h4>
+        <p>Functions are a fundamental building block. They are blocks of code designed to perform a particular task. A function is defined once and can be run (or "called") many times.</p>
+
+        <pre><code class="language-javascript">function calculateArea(width, height) {
     let area = width * height;
     return area;
-  }
+}</code></pre>
 
-  let area = calculateArea(5, 10);
-  console.log("The area is: " + area);
-&lt;/script&gt;
-      </pre>
+        <p><strong>Defining a Function:</strong></p>
+        <ul>
+          <li><code>calculateArea</code> is the function's name.</li>
+          <li><code>width</code> and <code>height</code> are parameters—placeholders for the data the function will receive.</li>
+          <li><code>return</code> sends a value back out of the function.</li>
+        </ul>
 
-      <h4>4. Conditional Logic</h4>
-      <pre>
-&lt;script&gt;
-  let hour = 14;
-  if (hour &lt; 12) {
+        <p><strong>Calling a Function:</strong></p>
+        <pre><code class="language-javascript">// Example usage
+let width = 5;
+let height = 10;
+let area = calculateArea(width, height);
+console.log("The area is: " + area);</code></pre>
+
+        <h4>4. Conditional Logic: Making Decisions</h4>
+        <p>Your code can make decisions using if...else statements.</p>
+
+        <pre><code class="language-javascript">let hour = 14;
+
+if (hour < 12) {
     console.log("Good morning!");
-  } else if (hour &lt; 18) {
+} else if (hour < 18) {
     console.log("Good afternoon!");
-  } else {
+} else {
     console.log("Good evening!");
-  }
-&lt;/script&gt;
-      </pre>
+}</code></pre>
+      </section>
 
-      <h3>DOM Manipulation</h3>
-      <ul>
-        <li><code>document.getElementById('id')</code></li>
-        <li><code>document.querySelector('.class')</code></li>
-        <li><code>.innerHTML</code>, <code>.textContent</code>, <code>.value</code></li>
-        <li><code>.style.property</code> (e.g., <code>backgroundColor</code>)</li>
-      </ul>
+      <!-- DOM Manipulation Section -->
+      <section>
+        <h3>DOM Manipulation: The Real Power</h3>
+        <p>The true magic of client-side JavaScript is its ability to interact with the Document Object Model (DOM). The DOM is a tree-like structure of your HTML page that the browser creates. JavaScript can access this tree to add, remove, or change any of the HTML elements and their styles.</p>
 
-      <h3>JavaScript Exercise: Tip Calculator</h3>
-      <ul>
-        <li>HTML:
-          <ul>
-            <li>&lt;h1&gt;Tip Calculator&lt;/h1&gt;</li>
-            <li>&lt;input type="number" id="billAmount"&gt;</li>
-            <li>&lt;button onclick="calculateTip()"&gt;Calculate 15% Tip&lt;/button&gt;</li>
-            <li>&lt;h2 id="tipResult"&gt;&lt;/h2&gt;</li>
-          </ul>
-        </li>
-        <li>JavaScript:
-          <pre>
-&lt;script&gt;
-  function calculateTip() {
-    let bill = parseFloat(document.getElementById('billAmount').value);
-    let tip = bill * 0.15;
-    let resultElement = document.getElementById('tipResult');
-    resultElement.textContent = "Tip to leave: $" + tip.toFixed(2);
-  }
-&lt;/script&gt;
-          </pre>
-        </li>
-      </ul>
+        <h4>Selecting Elements</h4>
+        <ul>
+          <li><code>document.getElementById('elementId')</code>: Grabs a single element by its unique id.</li>
+          <li><code>document.querySelector('.className')</code>: Grabs the first element it finds with a given CSS selector (like a class, ID, or tag).</li>
+        </ul>
 
-      <h3>Challenge: Mini To-Do List App</h3>
-      <ul>
-        <li>HTML:
-          <ul>
-            <li>&lt;h1&gt;My To-Do List&lt;/h1&gt;</li>
-            <li>&lt;input id="newItemInput"&gt;</li>
-            <li>&lt;button onclick="addTask()"&gt;Add Task&lt;/button&gt;</li>
-            <li>&lt;ul id="taskList"&gt;&lt;/ul&gt;</li>
-          </ul>
-        </li>
-        <li>JavaScript:
-          <pre>
-&lt;script&gt;
-  function addTask() {
-    let taskText = document.getElementById('newItemInput').value;
-    if (taskText === "") return;
+        <h4>Changing Content and Attributes</h4>
+        <ul>
+          <li><code>.innerHTML</code>: Changes the HTML content inside an element.</li>
+          <li><code>.textContent</code>: Changes just the text inside an element (safer).</li>
+          <li><code>.value</code>: Gets or sets the value of an input element.</li>
+        </ul>
 
-    let li = document.createElement('li');
-    li.textContent = taskText;
+        <h4>Changing Styles</h4>
+        <ul>
+          <li><code>.style.property</code>: Accesses the CSS properties of an element. Note that CSS properties with hyphens (like background-color) are written in camelCase in JavaScript (backgroundColor).</li>
+        </ul>
 
-    li.onclick = function() {
-      this.classList.toggle('completed');
-    };
+        <pre><code class="language-javascript">document.body.style.backgroundColor = 'navy';
+document.body.style.color = 'white';</code></pre>
+      </section>
 
-    document.getElementById('taskList').appendChild(li);
-    document.getElementById('newItemInput').value = "";
-  }
-&lt;/script&gt;
-          </pre>
-        </li>
-      </ul>
-    </section>
-  </main>
+      <!-- JavaScript Exercises -->
+      <section>
+        <h3>JavaScript Exercises</h3>
 
-  <footer>
-    <p>© 2025 Your Name Here</p>
-  </footer>
+        <h4>Beginner Exercise: Simple Tip Calculator</h4>
+        <p>Create an HTML page that helps a user calculate a restaurant tip.</p>
 
+        <h5>1. HTML Setup:</h5>
+        <ul>
+          <li>An <code>&lt;h1&gt;</code> that says "Tip Calculator".</li>
+          <li>An <code>&lt;input&gt;</code> for the bill amount. Give it <code>id="billAmount"</code> and <code>type="number"</code>.</li>
+          <li>A <code>&lt;button&gt;</code> that says "Calculate 15% Tip".</li>
+          <li>An empty <code>&lt;h2&gt;</code> where the result will be displayed. Give it <code>id="tipResult"</code>.</li>
+        </ul>
+
+        <h5>2. JavaScript Logic:</h5>
+        <ul>
+          <li>Create a function called <code>calculateTip</code>.</li>
+          <li>Inside the function:
+            <ul>
+              <li>Get the bill amount from the input box. Remember, the <code>.value</code> of an input is a string, so you'll need to convert it to a number using <code>parseFloat()</code>.</li>
+              <li>Calculate the tip: <code>let tip = bill * 0.15;</code></li>
+              <li>Select the result <code>&lt;h2&gt;</code>.</li>
+              <li>Display the result in a user-friendly format: <code>resultElement.textContent = "Tip to leave: $" + tip.toFixed(2);</code> (<code>toFixed(2)</code> ensures it shows two decimal places).</li>
+            </ul>
+          </li>
+          <li>Connect it: Attach your <code>calculateTip</code> function to the button's <code>onclick</code> event.</li>
+        </ul>
+
+        <h4>Challenge Exercise: Mini To-Do List Application</h4>
+        <p>This is a bigger challenge that combines everything you've learned. Create a simple to-do list application.</p>
+
+        <h5>1. HTML Setup:</h5>
+        <ul>
+          <li>An <code>&lt;h1&gt;</code> for "My To-Do List".</li>
+          <li>An <code>&lt;input&gt;</code> with <code>id="newItemInput"</code> for typing a new task.</li>
+          <li>A <code>&lt;button&gt;</code> with <code>id="addButton"</code> that says "Add Task".</li>
+          <li>An empty unordered list <code>&lt;ul&gt;</code> with <code>id="taskList"</code>. This is where your tasks will appear.</li>
+        </ul>
+
+        <h5>2. JavaScript Logic:</h5>
+        <ul>
+          <li>Create a function called <code>addTask</code>.</li>
+          <li>Inside the function:
+            <ul>
+              <li>Get the text from the input box.</li>
+              <li>If the input box is empty, do nothing (<code>return;</code>).</li>
+              <li>Create a new list item element: <code>let li = document.createElement('li');</code></li>
+              <li>Set the text of the new <code>&lt;li&gt;</code> to the user's input: <code>li.textContent = taskText;</code></li>
+              <li>Get the <code>&lt;ul&gt;</code> element: <code>let ul = document.getElementById('taskList');</code></li>
+              <li>Append the new <code>&lt;li&gt;</code> to the <code>&lt;ul&gt;</code>: <code>ul.appendChild(li);</code></li>
+              <li>Clear the input box for the next entry: <code>document.getElementById('newItemInput').value = "";</code></li>
+            </ul>
+          </li>
+          <li>Bonus Functionality: Add an <code>onclick</code> event to the new <code>&lt;li&gt;</code> elements. When a user clicks on a task item, it should add a CSS class to it called "completed" which applies a <code>text-decoration: line-through;</code> style.</li>
+        </ul>
+
+        <h5>3. Connect it:</h5>
+        <p>Attach your <code>addTask</code> function to the "Add Task" button's <code>onclick</code> event.</p>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      Source: Student Pack 2025.pdf — converted automatically.
+    </footer>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <!-- Quiz -->
+  <section class="quiz" data-lesson="2">
+    <h3>Quick Check</h3>
+    <div class="q">
+      <div class="question">Which tag creates a hyperlink?</div>
+      <div class="options">
+        <button class="option" data-correct="true">&lt;a&gt;</button>
+        <button class="option" data-correct="false">&lt;link&gt;</button>
+        <button class="option" data-correct="false">&lt;nav&gt;</button>
+        <button class="option" data-correct="false">&lt;h1&gt;</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+    <div class="q">
+      <div class="question">Which element is best for the main navigation links?</div>
+      <div class="options">
+        <button class="option" data-correct="true">&lt;nav&gt;</button>
+        <button class="option" data-correct="false">&lt;footer&gt;</button>
+        <button class="option" data-correct="false">&lt;section&gt;</button>
+        <button class="option" data-correct="false">&lt;span&gt;</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+    <div class="q">
+      <div class="question">Which CSS selector targets a class named "highlight"?</div>
+      <div class="options">
+        <button class="option" data-correct="true">.highlight</button>
+        <button class="option" data-correct="false">#highlight</button>
+        <button class="option" data-correct="false">highlight</button>
+        <button class="option" data-correct="false">&lt;highlight&gt;</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+    <div class="q">
+      <div class="question">Which JS declaration defines a constant value?</div>
+      <div class="options">
+        <button class="option" data-correct="true">const</button>
+        <button class="option" data-correct="false">let</button>
+        <button class="option" data-correct="false">var</button>
+        <button class="option" data-correct="false">def</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+    <div class="q">
+      <div class="question">Which property belongs to the CSS Box Model?</div>
+      <div class="options">
+        <button class="option" data-correct="true">padding</button>
+        <button class="option" data-correct="false">innerHTML</button>
+        <button class="option" data-correct="false">appendChild</button>
+        <button class="option" data-correct="false">querySelector</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+    <div class="actions">
+      <button class="btn" data-reset>Reset</button>
+    </div>
+  </section>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
 </body>
 </html>

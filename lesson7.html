@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Pack 2025 — Lesson 7: Introduction to Mobile App Development</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/script.js"></script>
+</head>
+<body class="lesson lesson-7">
+  <div class="container cards">
+    <header class="book-header">
+      <div class="book-title"><a href="index.html">Student Pack 2025</a></div>
+      <div class="lesson-title">Lesson 7 — Introduction to Mobile App Development</div>
+      <nav class="chapter-nav">
+        <a href="index.html">Contents</a> | 
+        <a href="lesson6.html">Prev</a> | 
+        <a href="lesson8.html">Next</a>
+      </nav>
+      <div class="reader-tools">
+        <div class="font-controls">
+          <button class="btn" data-font="-">A-</button>
+          <button class="btn" data-font="+">A+</button>
+        </div>
+        <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle theme">Toggle Theme</button>
+      </div>
+    </header>
+
+    <main class="book-content">
+      <section class="callout info">
+        <h4>Learning objectives</h4>
+        <ul>
+          <li>Compare native, web, and hybrid apps.</li>
+          <li>Understand cross-platform frameworks (React Native, Expo).</li>
+          <li>Map user flows and basic UI/UX considerations.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Introduction to Mobile App Development</h2>
+        <p>Welcome to the world of app development! Every day, millions of people use mobile apps to connect, learn, play, and work. This lesson will introduce you to the different types of mobile apps, the technologies used to build them, and the fundamental concepts you need to know to start thinking like an app developer.</p>
+
+        <h3>The Three Basic Types of Mobile Apps</h3>
+        <p>When a business or individual decides to build an app, they must first choose which type of app to create. This decision depends on their budget, target audience, and the features the app requires.</p>
+
+        <article>
+          <h4>1. Native Apps</h4>
+          <p>A native app is built specifically for a single mobile operating system (OS)—either iOS (for iPhones) or Android. Because they are "native" to the platform, they offer the best performance and have full access to all the device's features, like the camera, GPS, and contact list.</p>
+          <ul>
+            <li><strong>Technology Used:</strong> Java or Kotlin for native Android apps; Swift or Objective-C for native iOS apps.</li>
+            <li><strong>Pros:</strong> Faster performance and a user interface (UI) that feels familiar to the user.</li>
+            <li><strong>Cons:</strong> Expensive to build and maintain separate apps for both Android and iOS; updates must be downloaded from the app store; and they take up space on the user's device.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h4>2. Web Apps</h4>
+          <p>A web app is not a real app but a mobile-friendly website that behaves like one. It runs in a web browser like Safari or Chrome and doesn't need to be downloaded or installed from an app store. They are essentially "responsive" websites that adapt their layout to the user's device.</p>
+          <ul>
+            <li><strong>Technology Used:</strong> HTML5, CSS, JavaScript, Ruby, and other standard web technologies.</li>
+            <li><strong>Pros:</strong> Easier to maintain since there is only one codebase, and they work on all devices with a web browser.</li>
+            <li><strong>Cons:</strong> Dependent on the browser, require an internet connection to work, and may not be able to access all of the device's hardware features.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h4>3. Hybrid Apps</h4>
+          <p>A hybrid app is a blend of both native and web apps. It is built using web technologies (HTML, CSS, JavaScript) but is then wrapped inside a native "shell" that allows it to be downloaded from an app store and access some device features.</p>
+          <ul>
+            <li><strong>Technology Used:</strong> A mix of web technologies and native APIs, using frameworks like Ionic.</li>
+            <li><strong>Pros:</strong> Often quicker and cheaper to build than native apps and have less code to maintain.</li>
+            <li><strong>Cons:</strong> May lack the power and performance of a true native app and may be slower since they have to download web elements.</li>
+          </ul>
+        </article>
+
+        <h3>Cross-Platform Development: The Best of Both Worlds</h3>
+        <p>Building a separate native app for both Android and iOS can be time-consuming and expensive. To solve this problem, cross-platform development frameworks were created. These frameworks allow developers to write code once using a single programming language (often JavaScript) and then compile it into two separate native apps that run on both iOS and Android.</p>
+        <p>One of the most popular cross-platform frameworks is React Native. It uses JavaScript to build native apps, giving you the performance benefits of a native app with the ease of developing with one codebase. For beginners, the Expo framework is often used with React Native, as it simplifies the development process even further.</p>
+      </section>
+
+      <section>
+        <h3>Main Things to Consider When Designing an App</h3>
+        <p>A successful app isn't just about code; it's about thoughtful design. Before writing a single line of code, developers think about these key principles:</p>
+        <ul>
+          <li><strong>User Interface (UI) vs. User Experience (UX)</strong>
+            <ul>
+              <li><strong>UI (User Interface):</strong> What the user sees — the visual design of the app, including buttons, colors, fonts, and screen layout. The goal of UI is to be visually appealing and clear.</li>
+              <li><strong>UX (User Experience):</strong> What the user feels — the overall experience of using the app. Is it easy to use? Is it frustrating? Is it logical? The goal of UX is to make the app efficient, enjoyable, and intuitive.</li>
+            </ul>
+          </li>
+          <li><strong>Target Audience:</strong> Who are you building this app for? Design differs if it’s for a young child, a business professional, or an elderly person. Understanding your audience helps in decisions about colors, language, and feature complexity.</li>
+          <li><strong>User Flow:</strong> The path a user takes through your app to complete a task. For example, to post a photo on Instagram, the flow might be: Open App → Tap '+' button → Select photo → Apply filter → Write caption → Tap 'Share'. Designing clear and simple flows is key to good UX.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Setting Up Your App Development Environment</h3>
+        <p>We will be using React Native with the Expo framework, which lets us build native apps for both iOS and Android using JavaScript.</p>
+        <ol>
+          <li>
+            <strong>Install Node.js:</strong> This is a JavaScript runtime that Expo uses to build your app.<br />
+            <em>Action:</em> Download and install the "LTS" (Long-Term Support) version from the <a href="https://nodejs.org/" target="_blank" rel="noopener">official Node.js website</a>.
+          </li>
+          <li>
+            <strong>Install a Code Editor:</strong> We recommend Visual Studio Code (VS Code).<br />
+            <em>Action:</em> Download and install it for free from <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a>.
+          </li>
+          <li>
+            <strong>Install the Expo Command Line Tool (CLI):</strong><br />
+            <em>Action:</em> Open your computer’s Terminal (macOS) or Command Prompt/PowerShell (Windows) and run:<br />
+            <code>npm install -g expo-cli</code>
+          </li>
+          <li>
+            <strong>Install the Expo Go App on Your Phone:</strong> This free app will run your project live so you can see your changes instantly.<br />
+            <em>Action:</em> On your smartphone, go to the App Store (iPhone) or Google Play Store (Android) and install the "Expo Go" app.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>What are Libraries?</h3>
+        <p>When developing an app, you don't start from scratch. Developers use libraries, which are collections of pre-written code that can be used to perform common tasks. For example, instead of writing complex code to display a map, a developer can use a map library. This saves time and ensures that standard elements like buttons and video players are reliable.</p>
+      </section>
+
+      <section>
+        <h3>App Development Exercises</h3>
+
+        <article>
+          <h4>Beginner Coding Exercise: The Simple Counter App</h4>
+          <p><strong>Goal:</strong> Build a very simple but fully interactive counter application. This project will teach you the fundamentals of managing a value that changes based on user input.</p>
+          <p><strong>What the App Does & Looks Like:</strong> The app displays a number prominently in the center of the screen with two buttons below it: "Increase" and "Decrease". Pressing "Increase" increments the number by one, and pressing "Decrease" decrements it by one. The interface should be clean and simple.</p>
+        </article>
+
+        <article>
+          <h4>Challenge Coding Exercise: Build a To-Do List App</h4>
+          <p><strong>Your Goal:</strong> Build a functional to-do list application that manages a list of tasks changing over time based on user input.</p>
+          <p><strong>What the App Does & Looks Like:</strong></p>
+          <ul>
+            <li><strong>Input Area:</strong> At the top, a text input field for typing a new task and an "Add Task" button.</li>
+            <li><strong>Task List:</strong> Below the input area, a list displaying all added tasks. When a task is added, it should appear instantly in the list.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer>Source: Student Pack 2025.pdf — converted automatically.</footer>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <section class="quiz" data-lesson="7">
+    <h3>Quick Check</h3>
+
+    <div class="q">
+      <p class="question">Which framework helps build native apps using JavaScript?</p>
+      <div class="options">
+        <button class="option" data-correct="true">React Native</button>
+        <button class="option" data-correct="false">Django</button>
+        <button class="option" data-correct="false">Flask</button>
+        <button class="option" data-correct="false">Laravel</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+
+    <div class="q">
+      <p class="question">Which statement about native apps is TRUE?</p>
+      <div class="options">
+        <button class="option" data-correct="true">They offer best performance on their platform</button>
+        <button class="option" data-correct="false">They always work offline</button>
+        <button class="option" data-correct="false">They use only HTML/CSS</button>
+        <button class="option" data-correct="false">They cannot access device features</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+
+    <div class="q">
+      <p class="question">Which is a key goal of UX design?</p>
+      <div class="options">
+        <button class="option" data-correct="true">Make the app intuitive and efficient</button>
+        <button class="option" data-correct="false">Use as many colors as possible</button>
+        <button class="option" data-correct="false">Copy every competitor</button>
+        <button class="option" data-correct="false">Hide advanced features</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+
+    <div class="q">
+      <p class="question">What does Expo help with?</p>
+      <div class="options">
+        <button class="option" data-correct="true">Simplifies React Native development</button>
+        <button class="option" data-correct="false">Creates Python virtualenvs</button>
+        <button class="option" data-correct="false">Builds Django apps</button>
+        <button class="option" data-correct="false">Compiles Java backends</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+  </section>
+</body>
+</html>

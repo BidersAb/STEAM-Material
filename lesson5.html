@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Pack 2025 — Lesson 5: Introduction to Arduino</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/script.js"></script>
+</head>
+<body class="lesson lesson-5">
+  <div class="container cards">
+    <header class="book-header">
+      <div class="book-title"><a href="index.html">Student Pack 2025</a></div>
+      <div class="lesson-title">Lesson 5 — Introduction to Arduino</div>
+      <nav class="chapter-nav" aria-label="Lesson navigation">
+        <a href="index.html">Contents</a> | 
+        <a href="lesson4.html">Prev</a> | 
+        <a href="lesson6.html">Next</a>
+      </nav>
+      <div class="reader-tools">
+        <div class="font-controls" role="group" aria-label="Font size controls">
+          <button class="btn" data-font="-" aria-label="Decrease font size">A-</button>
+          <button class="btn" data-font="+" aria-label="Increase font size">A+</button>
+        </div>
+        <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle theme">Toggle Theme</button>
+      </div>
+    </header>
+
+    <main class="book-content">
+      <section class="callout tip" aria-label="Lesson overview">
+        <h4>In this lesson</h4>
+        <ul>
+          <li>Identify Arduino Uno pins and their uses.</li>
+          <li>Build your first circuit and upload a sketch.</li>
+          <li>Troubleshoot with on-board LEDs and serial monitor.</li>
+        </ul>
+      </section>
+
+      <article>
+        <p>
+          <strong>Introduction to Arduino</strong><br />
+          Welcome to the world of physical computing! This lesson introduces you to Arduino, an open-source platform that makes building interactive electronics projects accessible to everyone, from artists and designers to students and hobbyists.
+          With an Arduino, you can create projects that sense the environment and react to it, from simple blinking lights to complex robots.
+        </p>
+
+        <p>
+          <strong>What is Arduino?</strong><br />
+          Arduino is a complete platform consisting of two main parts:
+          <ol>
+            <li>A physical programmable circuit board, often referred to as a microcontroller.</li>
+            <li>A piece of software, or IDE (Integrated Development Environment), that runs on your computer. You use the IDE to write and upload code to the physical board.</li>
+          </ol>
+          Before we dive into the Arduino board itself, it’s important to understand what a microcontroller is.
+          A microcontroller is a compact integrated circuit (IC) device designed to control other parts of an electronic system.
+          Think of it as a mini-computer on a single chip, optimized for interacting with components like sensors, motors, and lights.
+        </p>
+
+        <section aria-label="Arduino UNO Board">
+          <h2>The Arduino UNO Board: A Detailed Look</h2>
+          <p>
+            The Arduino UNO is the most popular and standard board, highly recommended for beginners because it is easy to use.
+            It includes everything you need to get started. Let’s break down its key parts, as seen in the diagram:
+          </p>
+          <ul>
+            <li><strong>1 &amp; 2 - Power (USB / Barrel Jack):</strong> Every Arduino needs power. The UNO can be powered either from a USB cable connected to your computer (1) or a wall power supply connected to the barrel jack (2). The USB connection is also how you will load your code onto the board.</li>
+            <li><strong>3-9 - Pins:</strong> The pins are where you connect wires to build your circuits. They have different functions:
+              <ul>
+                <li><strong>GND (3):</strong> 'Ground'. Several GND pins can be used to ground your circuit.</li>
+                <li><strong>5V (4) &amp; 3.3V (5):</strong> Supply 5 volts and 3.3 volts of power, respectively.</li>
+                <li><strong>Analog In (6):</strong> Pins A0 through A5 can read signals from analog sensors (like temperature sensors) and convert them into digital values.</li>
+                <li><strong>Digital (7):</strong> Pins 0 through 13 can be used for digital input (e.g., reading button pushes) and digital output (e.g., powering an LED).</li>
+                <li><strong>PWM (8):</strong> Pins with a tilde ~ (3, 5, 6, 9, 10, 11) can simulate analog output using Pulse-Width Modulation (PWM), useful for effects like fading LEDs.</li>
+                <li><strong>AREF (9):</strong> Analog Reference pin for advanced uses (usually left alone).</li>
+              </ul>
+            </li>
+            <li><strong>10 - Reset Button:</strong> Restarts the loaded code on the Arduino when pressed.</li>
+            <li><strong>11 - Power LED Indicator:</strong> Lights up when the Arduino is powered.</li>
+            <li><strong>12 - TX RX LEDs:</strong> Flash when the Arduino transmits or receives data, such as during program upload.</li>
+            <li><strong>13 - Main IC:</strong> The large black chip that acts as the brain of the Arduino.</li>
+            <li><strong>14 - Voltage Regulator:</strong> Controls the voltage to protect the Arduino from overvoltage; never exceed 20 volts.</li>
+          </ul>
+        </section>
+
+        <section aria-label="Essential Tools for Prototyping">
+          <h2>Essential Tools for Prototyping</h2>
+          <p>
+            When working with an Arduino, you’ll use a few key components to build your circuits without soldering:
+          </p>
+          <ul>
+            <li><strong>Breadboard:</strong> A base for building temporary circuits, with rows of holes that are electrically connected internally.
+              <ul>
+                <li><strong>Terminal Strips:</strong> Main area to place components; holes in each horizontal row (e.g., row 1, columns a-e) are connected.</li>
+                <li><strong>Power Rails:</strong> Vertical strips on the sides marked + and – to supply power and ground.</li>
+              </ul>
+            </li>
+            <li><strong>Jumper Wires:</strong> Wires with solid tips for connecting components on the breadboard and to Arduino pins.</li>
+            <li><strong>Resistors:</strong> Components that resist current flow, used to protect sensitive parts like LEDs. Measured in ohms (Ω).</li>
+            <li><strong>LED (Light-Emitting Diode):</strong> Emits light when current flows. Polarized, with a long positive leg (anode) and short negative leg (cathode).</li>
+          </ul>
+        </section>
+
+        <section aria-label="Arduino Exercises">
+          <h2>Arduino Exercises</h2>
+
+          <article>
+            <h3>Beginner Exercise: Your First Circuit - Blinking an LED</h3>
+            <p>This is the "Hello, World!" of electronics. Build a simple circuit and write code to make an LED blink on and off.</p>
+            <ol>
+              <li><strong>Build the Circuit:</strong>
+                <ul>
+                  <li>Connect Arduino’s GND pin to the negative (blue) power rail on your breadboard with a jumper wire.</li>
+                  <li>Place an LED on the breadboard.</li>
+                  <li>Connect the LED’s short leg (cathode) to the negative rail on the breadboard.</li>
+                  <li>Connect one leg of a 220Ω resistor to the same row as the LED’s long leg (anode).</li>
+                  <li>Connect the other leg of the resistor to a different breadboard row.</li>
+                  <li>Use a jumper wire to connect that row to Digital Pin 13 on the Arduino.</li>
+                </ul>
+              </li>
+              <li><strong>Write the Code:</strong> Use this code in the Arduino IDE:
+                <pre><code>// This code will make an LED blink on and off
+void setup() {
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(13, HIGH);  // Turn LED on
+  delay(1000);             // Wait 1 second
+  digitalWrite(13, LOW);   // Turn LED off
+  delay(1000);             // Wait 1 second
+}
+                </code></pre>
+              </li>
+              <li><strong>Upload and Run:</strong> Connect Arduino to your computer via USB, select the correct board and port, then upload. Your LED should blink!</li>
+            </ol>
+          </article>
+
+          <article>
+            <h3>Challenge Exercise: Traffic Light Controller</h3>
+            <p>Control multiple LEDs in sequence simulating a traffic light.</p>
+            <ol>
+              <li><strong>Build the Circuit:</strong> You’ll need three LEDs: red, yellow, green.
+                <ul>
+                  <li>Connect each LED to its own digital pin (e.g., red to pin 11, yellow to pin 12, green to pin 13).</li>
+                  <li>Each LED needs its own 220Ω resistor connected to its long leg (anode).</li>
+                  <li>Connect all LED short legs (cathode) to the ground rail on the breadboard.</li>
+                </ul>
+              </li>
+              <li><strong>Write the Code:</strong> Write a <code>loop()</code> function for this sequence:
+                <ul>
+                  <li>Green ON for 5 seconds.</li>
+                  <li>Green OFF, Yellow ON for 2 seconds.</li>
+                  <li>Yellow OFF, Red ON for 5 seconds.</li>
+                  <li>Repeat endlessly.</li>
+                </ul>
+              </li>
+              <li><strong>Hint:</strong> Use multiple <code>digitalWrite()</code> and <code>delay()</code> commands to control LEDs in the correct order.</li>
+            </ol>
+          </article>
+        </section>
+      </article>
+    </main>
+
+    <footer>Source: Student Pack 2025.pdf — converted automatically.</footer>
+  </div>
+
+  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <section class="quiz" data-lesson="5" aria-label="Quick check quiz">
+    <h3>Quick Check</h3>
+
+    <div class="q" role="group" aria-labelledby="q1-label">
+      <div class="question" id="q1-label">Which Arduino pin is commonly used for on-board LED examples?</div>
+      <div class="options">
+        <button class="option" data-correct="false">Pin 2</button>
+        <button class="option" data-correct="true">Pin 13</button>
+        <button class="option" data-correct="false">A0</button>
+        <button class="option" data-correct="false">AREF</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+
+    <div class="q" role="group" aria-labelledby="q2-label">
+      <div class="question" id="q2-label">Which pins provide voltage output?</div>
+      <div class="options">
+        <button class="option" data-correct="true">5V / 3.3V</button>
+        <button class="option" data-correct="false">TX/RX</button>
+        <button class="option" data-correct="false">PWM pins only</button>
+        <button class="option" data-correct="false">GND</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+
+    <div class="q" role="group" aria-labelledby="q3-label">
+      <div class="question" id="q3-label">Which pins can read analog sensor values?</div>
+      <div class="options">
+        <button class="option" data-correct="true">A0–A5</button>
+        <button class="option" data-correct="false">D0–D13</button>
+        <button class="option" data-correct="false">AREF</button>
+        <button class="option" data-correct="false">Reset</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+
+    <div class="q" role="group" aria-labelledby="q4-label">
+      <div class="question" id="q4-label">What does PWM allow on certain digital pins?</div>
+      <div class="options">
+        <button class="option" data-correct="true">Simulate analog output (e.g., LED fade)</button>
+        <button class="option" data-correct="false">Measure voltage precisely</button>
+        <button class="option" data-correct="false">Store code permanently</button>
+        <button class="option" data-correct="false">Provide power to the board</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+
+    <div class="q" role="group" aria-labelledby="q5-label">
+      <div class="question" id="q5-label">Which component restarts the running sketch?</div>
+      <div class="options">
+        <button class="option" data-correct="true">Reset button</button>
+        <button class="option" data-correct="false">AREF pin</button>
+        <button class="option" data-correct="false">TX LED</button>
+        <button class="option" data-correct="false">Voltage regulator</button>
+      </div>
+      <span class="result" aria-live="polite"></span>
+    </div>
+  </section>
+</body>
+</html>
