@@ -1,37 +1,117 @@
 <!doctype html>
-<html lang='en'><head>
-<meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>Student Pack 2025 - Contents</title>
-<link rel='stylesheet' href='assets/style.css'>
-<script defer src="assets/script.js"></script>
-</head><body class="home">
-<div class='progress-bar'><div class='progress' id='progress'></div></div>
-<div class='container cards'>
-<header class='book-header'>
-  <div class='book-title'>Student Pack 2025</div>
-  <div class='reader-tools'>
-    <div class='font-controls'>
-      <button class='btn' data-font='-'>A-</button>
-      <button class='btn' data-font='+'>A+</button>
-    </div>
-    <button class='btn btn-ghost' id='themeToggle' aria-label='Toggle theme'>Toggle Theme</button>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STEM Learning Hub - Contents</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="home">
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
   </div>
-</header>
-<main class='book-content'>
-<h2>Contents</h2>
-<ul>
-<li><a href='lesson1.html'>Lesson 1 — 21st-Century Skills and Media Literacy</a></li>
-<li><a href='lesson2.html'>Lesson 2 — Introduction to Web Development</a></li>
-<li><a href='lesson3.html'>Lesson 3 — Introduction to Python</a></li>
-<li><a href='lesson4.html'>Lesson 4 — Introduction to Robotics</a></li>
-<li><a href='lesson5.html'>Lesson 5 — Introduction to Arduino</a></li>
-<li><a href='lesson6.html'>Lesson 6 — Drone Wing Design and Biomimicry</a></li>
-<li><a href='lesson7.html'>Lesson 7 — Introduction to Mobile App Development</a></li>
-<li><a href='lesson8.html'>Lesson 8 — Introduction to Artificial Intelligence (AI)</a></li>
-<li><a href='lesson9.html'>Lesson 9 — Introduction to Virtual Reality (VR)</a></li>
-<li><a href='lesson10.html'>Lesson 10 — Aircraft Cabin Redesign</a></li>
-</ul>
-<footer>Converted from uploaded PDF.</footer>
-</main></div>
-<button class='back-to-top' id='backToTop' title='Back to top'>↑</button>
-</body></html>
+  
+  <div class="container cards">
+    <header class="book-header">
+      <div class="book-title">STEM Learning Hub</div>
+      <div class="reader-tools">
+        <div class="font-controls">
+          <button class="btn" data-font="-">A-</button>
+          <button class="btn" data-font="+">A+</button>
+        </div>
+        <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle theme">Toggle Theme</button>
+      </div>
+    </header>
+    
+    <main class="book-content">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="lesson1.html">Lesson 1 — 21st-Century Skills and Media Literacy</a></li>
+        <li><a href="lesson2.html">Lesson 2 — Introduction to Web Development</a></li>
+        <li><a href="lesson3.html">Lesson 3 — Introduction to Python</a></li>
+        <li><a href="lesson4.html">Lesson 4 — Introduction to Robotics</a></li>
+        <li><a href="lesson5.html">Lesson 5 — Introduction to Arduino</a></li>
+        <li><a href="lesson6.html">Lesson 6 — Drone Wing Design and Biomimicry</a></li>
+        <li><a href="lesson7.html">Lesson 7 — Introduction to Mobile App Development</a></li>
+        <li><a href="lesson8.html">Lesson 8 — Introduction to Artificial Intelligence (AI)</a></li>
+        <li><a href="lesson9.html">Lesson 9 — Introduction to Virtual Reality (VR)</a></li>
+        <li><a href="lesson10.html">Lesson 10 — Aircraft Cabin Redesign</a></li>
+      </ul>
+      <footer>Converted from uploaded PDF.</footer>
+    </main>
+  </div>
+  
+  <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+
+  <script>
+    // Reader utilities: theme toggle, font size, progress, back-to-top
+    (function(){
+      const root = document.documentElement;
+      
+      // Theme: persist in localStorage
+      const THEME_KEY = 'ebook_theme';
+      function applyTheme(theme){
+        if(theme === 'dark') document.body.classList.add('dark');
+        else document.body.classList.remove('dark');
+      }
+      const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
+      applyTheme(savedTheme);
+      const themeBtn = document.getElementById('themeToggle');
+      if(themeBtn){
+        themeBtn.addEventListener('click', () => {
+          const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+          localStorage.setItem(THEME_KEY, next);
+          applyTheme(next);
+        });
+      }
+
+      // Font scale controls
+      const FONTSCALE_KEY = 'ebook_fontscale';
+      const minScale = 0.85, maxScale = 1.35, step = 0.05;
+      function getScale(){
+        const v = parseFloat(localStorage.getItem(FONTSCALE_KEY));
+        return Number.isFinite(v) ? v : 1;
+      }
+      function setScale(v){
+        const clamped = Math.min(maxScale, Math.max(minScale, v));
+        root.style.setProperty('--font-scale', clamped);
+        localStorage.setItem(FONTSCALE_KEY, String(clamped));
+      }
+      setScale(getScale());
+      document.querySelectorAll('[data-font]')?.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const dir = btn.getAttribute('data-font');
+          const current = getScale();
+          setScale(dir === '+' ? current + step : current - step);
+        });
+      });
+
+      // Progress bar
+      const progressEl = document.getElementById('progress');
+      function updateProgress(){
+        if(!progressEl) return;
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressEl.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', updateProgress);
+      window.addEventListener('resize', updateProgress);
+      updateProgress();
+
+      // Back to top
+      const backToTop = document.getElementById('backToTop');
+      function updateBackToTop(){
+        if(!backToTop) return;
+        const show = (window.scrollY || document.documentElement.scrollTop) > 400;
+        backToTop.classList.toggle('show', show);
+      }
+      if(backToTop){
+        backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+        window.addEventListener('scroll', updateBackToTop);
+        updateBackToTop();
+      }
+    })();
+  </script>
+</body>
+</html>
