@@ -196,7 +196,7 @@ footer{ margin-top:2rem; color:var(--muted); font-size:0.95rem; text-align:cente
 .lesson-card h3 {
   font-size: 1rem;
   font-weight: 600;
-  padding-left: 0.75rem;
+  padding: 0.75rem;
   margin: 0;
   flex-grow: 1;
   display: flex;
