@@ -232,3 +232,52 @@ footer{ margin-top:2rem; color:var(--muted); font-size:0.95rem; text-align:cente
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.challenge-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff4eb; /* soft warm background */
+  border-radius: 12px; 
+  overflow: hidden;
+  color: #333;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* slightly lighter shadow */
+  padding: 1rem 1rem; /* reduced padding */
+  margin-bottom: 1rem; /* spacing between cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.challenge-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  background: #ffe6d9; /* subtle warm hover effect */
+}
+
+.challenge-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #d35400; 
+  margin-bottom: 0.5rem; 
+}
+
+.challenge-card p {
+  flex-grow: 1;
+  line-height: 1.5;
+  margin-bottom: 0.75rem; 
+  color: #555; 
+}
+
+.challenge-card a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem; /* slightly smaller button */
+  border-radius: 10px;
+  background: #e67e22; 
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.challenge-card a:hover {
+  background: #cf6d17; 
+  transform: translateY(-2px);
+}
